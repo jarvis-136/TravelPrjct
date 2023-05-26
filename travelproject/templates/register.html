@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<!DOCTYPE html>
+<!-- Created By CodingLab - www.codinglabweb.com -->
+<html lang="en" dir="ltr">
+  <head>
+    <title>Register</title>
+     <style>
+      div {
+        margin-bottom: 10px;
+      }
+      label {
+        display: inline-block;
+        width: 150px;
+      }
+       input {
+        padding: 5px 10px;
+      }
+    </style>
+</head>
+<body >
+ <center>
+  <form method="post" action="register" >
+      {% csrf_token %}
+      <div>
+        <label for="name">Username : </label>
+        <input id="name" name="username" type="text" autofocus required/>
+      </div>
+      <div>
+        <label for="name">First Name : </label>
+        <input id="name" name="first_name" type="text" autofocus required/>
+      </div>
+      <div>
+        <label for="name">Last Name : </label>
+        <input id="name" name="last_name" type="text" autofocus required/>
+      </div>
+      <div>
+        <label for="email">Email : </label>
+        <input id="email" name="email" type="email" required/>
+      </div>
+<!--      <div>-->
+<!--        <label for="phn">Phone : </label>-->
+<!--        <input id="phn" name="phone" type="text" maxlength="10" required/>-->
+<!--      </div>-->
+<!--      <div>-->
+<!--        <label >Gender : </label>-->
+<!--        <input type="radio" name="gender" value="male" required />Male-->
+<!--        <input  type="radio" name="gender" value="male"  required/>Female-->
+<!--        <input  type="radio" name="gender" value="male"  required />Other-->
+<!--      </div>-->
+      <div>
+        <label for="pswrd">Password : </label>
+        <input id="pswrd" name="password" type="password" required/>
+      </div>
+      <div>
+        <label for="repwd">Confirm Password : </label>
+        <input id="repwd" name="password1" type="password" required />
+      </div>
+<!--      <div>-->
+<!--        <input  name="chkbx" type="checkbox" required/><span>I agree all terms & conditions</span>-->
+<!--      </div>-->
+
+      <input type="submit" value="Submit" />
+      <input type="reset" value="Reset">
+  </form>
+     {% for msg in messages %}
+     <h2>{{msg}}</h2>
+     {% endfor %}
+ </center>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<!DOCTYPE html>
+<!-- Created By CodingLab - www.codinglabweb.com -->
+<html lang="en" dir="ltr">
+  <head>
+    <title>Login</title>
+     <style>
+      div {
+        margin-bottom: 10px;
+      }
+      label {
+        display: inline-block;
+        width: 150px;
+      }
+       input {
+        padding: 5px 10px;
+      }
+    </style>
+</head>
+<body >
+ <center>
+  <form method="post" action="login" >
+      {% csrf_token %}
+      <div>
+        <label for="name">Username : </label>
+        <input id="name" name="username" type="text" autofocus required/>
+      </div>
+      <div>
+
+        <label for="pswrd">Password : </label>
+        <input id="pswrd" name="password" type="password" required/>
+      </div>
+
+      <input type="submit" value="Submit" />
+  </form>
+     {% for msg in messages %}
+     <h2>{{msg}}</h2>
+     {% endfor %}
+ </center>
+</body>
+</html>
